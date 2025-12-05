@@ -1,0 +1,141 @@
+/* Full-page background + centering */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #4f46e5, #111827 40%, #020617);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.main-container {
+  height: calc(100vh - 56px); /* 56px = navbar height */
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+}
+/* Card: glass + gradient border */
+.card {
+  position: relative;
+  width: 22rem; /* a bit wider than default */
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2px;                 /* for gradient border */
+  background: linear-gradient(135deg, #a855f7, #22d3ee, #f97316);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+}
+
+/* Inner glass layer */
+.card-body {
+  border-radius: 1.4rem;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 2rem 2.2rem;
+  color: #e5e7eb;
+}
+
+/* Title */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+  color: #f9fafb;
+  margin-bottom: 1.8rem;
+  text-transform: uppercase;
+}
+
+/* Form labels */
+.form-group label,
+.form-check-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+/* Inputs */
+.form-control {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.form-control::placeholder {
+  color: #6b7280;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Helper text */
+.form-text {
+  font-size: 0.75rem;
+  color: #9ca3af !important;
+}
+
+/* Checkbox */
+.form-check-input {
+  background-color: #020617;
+  border-color: #4b5563;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #22c55e;
+  border-color: #22c55e;
+}
+
+/* Submit button */
+.btn-primary {
+  width: 100%;
+  margin-top: 1.4rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+
+  background-image: linear-gradient(120deg, #22d3ee, #4f46e5, #a855f7);
+  background-size: 200% 200%;
+  color: #f9fafb;
+
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.6);
+  transition: background-position 0.3s ease, transform 0.12s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-position: 100% 0;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(79, 70, 229, 0.85);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.9);
+}
+
+/* Small spacing tweaks */
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-check {
+  margin-top: 0.6rem;
+}
