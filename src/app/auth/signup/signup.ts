@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService, AppUser } from '../../shared/auth';
+import { AdminDashboard } from '../../admin/admin-dashboard/admin-dashboard';
 
 @Component({
   selector: 'app-signup',
@@ -50,7 +51,7 @@ export class Signup {
 
   
     if (result.success) {
-      this.router.navigate(['/login']);
+      this.router.navigate([AdminDashboard]);
     }
   }
 
