@@ -19,6 +19,10 @@ body {
   align-items: center;       /* vertical center */
 }
 /* Card: glass + gradient border */
+a{
+    color: #22d3ee;
+    text-decoration: none;
+}
 .card {
   position: relative;
   width: 22rem; /* a bit wider than default */

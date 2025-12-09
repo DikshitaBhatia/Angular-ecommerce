@@ -1,1 +1,113 @@
-<p>signup works!</p>
+<div class="main-container">
+  <div class="card" style="width: 40rem; height: auto; margin-top: 400px;  ">
+    <div class="card-body">
+      <h5 class="card-title">SIGN-UP</h5>
+
+      <form (ngSubmit)="onSignup()" #signupForm="ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            name="email"
+            [(ngModel)]="signupData.email"
+            required
+          />
+          <small id="emailHelp" class="form-text text-muted">
+            Your data is not safe with us... Dont login if you are too much paranoid..
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputFullName">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputFullName"
+            aria-describedby="fullNameHelp"
+            placeholder="Enter full name"
+            name="fullName"
+            [(ngModel)]="signupData.fullName"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPhoneNumber">Phone Number</label>
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputPhoneNumber"
+            aria-describedby="phoneNumberHelp"
+            placeholder="integer only"
+            name="phone"
+            [(ngModel)]="signupData.phone"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputState">State</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputState"
+            aria-describedby="stateHelp"
+            placeholder="Enter state"
+            name="state"
+            [(ngModel)]="signupData.state"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+            name="password"
+            [(ngModel)]="signupData.password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword2">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword2"
+            placeholder="Password"
+            name="confirmPassword"
+            [(ngModel)]="signupData.confirmPassword"
+            required
+          />
+        </div>
+
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+            name="isAdmin"
+            [(ngModel)]="signupData.isAdmin"
+          />
+          <label class="form-check-label" for="exampleCheck1">
+            Are you an admin??
+          </label>
+        </div>
+
+        <a href="/login">Already have an account?? Login here..</a>
+
+        <button type="submit" class="btn btn-primary mt-3">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
