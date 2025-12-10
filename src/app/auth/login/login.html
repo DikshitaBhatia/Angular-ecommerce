@@ -13,8 +13,8 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="loginData.password" required>
   </div>
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isAdmin" [(ngModel)]="loginData.isAdmin">
-    <label class="form-check-label" for="exampleCheck1">Are you an admin??</label>
+    <input type="checkbox" class="form-check-input" id="loginAsAdmin" name="isAdmin" [(ngModel)]="loginData.isAdmin">
+    <label class="form-check-label" for="loginAsAdmin">Are you an admin??</label>
   </div>
   <a href="/signup">Dont have an account?? create immidiately..</a>
   <button type="submit" class="btn btn-primary">Submit</button>

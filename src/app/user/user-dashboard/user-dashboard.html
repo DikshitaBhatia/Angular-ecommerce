@@ -1,1 +1,49 @@
-<p>user-dashboard works!</p>
+<div class="container py-4">
+  <section class="mb-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title mb-1">Welcome, {{currentUser?.fullName}}</h3>
+        <p class="text-muted mb-1">Logged in as {{currentUser?.email}}</p>
+        <p class="text-muted mb-1">
+          Role<span class="badge bg-primary">User</span>
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Browse Products</h5>
+    <input type="text" class="form-control" placeholder="Search products..." style="max-width: 260px" [(ngModel)]="searchTerm" name="searchTerm" />
+  </section>
+    <!-- PRODUCT LIST -->
+  <section>
+    <div class="table-responsive shadow-sm rounded bg-white">
+      <table class="table table-hover mb-0 align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>#ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of filteredProducts">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>₹{{ product.price }}</td>
+            <td>{{ product.category }}</td>
+            <td>{{ product.stock }}</td>
+          </tr>
+
+          <tr *ngIf="filteredProducts.length === 0">
+            <td colspan="5" class="text-center text-muted py-4">
+              No products found
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

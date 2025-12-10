@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, Products } from '../../services/products';
+import { Product, ProductService } from '../../services/products';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -31,7 +31,7 @@ export class AdminDashboard implements OnInit{
     stock: 0
   };
 
-  constructor(private productsService: Products) {}
+  constructor(private productsService: ProductService) {}
   ngOnInit() {
     this.loadProducts();
   }

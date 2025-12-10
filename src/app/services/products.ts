@@ -11,7 +11,7 @@ export interface Product {
 @Injectable({
   providedIn: 'root',
 })
-export class Products {
+export class ProductService {
 
   private readonly PRODUCTS_KEY = 'app_products';
   private nextId = 5;
