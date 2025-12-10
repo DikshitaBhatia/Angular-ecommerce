@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService,AppUser } from '../../shared/auth';
 import { Product, ProductService } from '../../services/products';
+import { CartService } from '../../services/cart';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -17,11 +18,13 @@ export class UserDashboard implements OnInit {
   currentUser: AppUser | null = null;
   products: Product[] = [];
   searchTerm = '';
+  cartItemsCount = 0;
 
   constructor(
     private auth: AuthService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -33,6 +36,11 @@ export class UserDashboard implements OnInit {
     }
 
     this.products = this.productService.getProducts();
+  }
+  onAddToCart(product: Product) {
+    this.cartService.addToCart(product, 1);
+    this.cartItemsCount = this.cartService.getItems().length;
+    alert(`Added "${product.name}" to cart.`);
   }
 
   get filteredProducts(): Product[] {
